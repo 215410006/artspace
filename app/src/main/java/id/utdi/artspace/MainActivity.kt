@@ -75,7 +75,6 @@ fun ArtSpaceApp() {
         }
 
         Spacer(modifier = Modifier.height(10.dp))
-
         LazyColumn(
             modifier = Modifier.fillMaxSize()
         ) {
@@ -156,6 +155,34 @@ fun ArtPieceListItem(artPiece: ArtPiece, onItemClick: () -> Unit) {
     }
 }
 
+@Composable
+fun ArtPieceList(artPieces: List<ArtPiece>) {
+    LazyColumn {
+        items(artPieces) { artPiece ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                // Tambahkan ikon di sini
+                Image(
+                    painter = painterResource(id = artPiece.imageResId),
+                    contentDescription = artPiece.name,
+                    modifier = Modifier.size(40.dp)
+                )
+
+                // Tambahkan teks nama art piece
+                Text(text = artPiece.name)
+
+                // Tambahkan teks deskripsi art piece
+                Text(text = artPiece.description)
+
+                // Tambahkan aksi ketika item diklik
+                // ...
+            }
+        }
+    }
+}
 
 data class ArtPiece(val id: Int, val name: String, val description: String, val imageResId: Int)
 
@@ -163,22 +190,16 @@ fun generateArtPieces(): List<ArtPiece> {
     return listOf(
         ArtPiece(1, "Danau", "Pemandangan danau", R.drawable.my_icon1),
         ArtPiece(2, "Gunung", "Pemandangan gunung", R.drawable.my_icon2),
-        ArtPiece(3, "Danau", "Pemandangan danau", R.drawable.my_icon1),
+        ArtPiece(3, "Danau", "Pemandangan danau", R.drawable.my_icon2),
         ArtPiece(4, "Danau", "Pemandangan danau", R.drawable.my_icon1),
-        ArtPiece(5, "Danau", "Pemandangan danau", R.drawable.my_icon1),
+        ArtPiece(5, "Danau", "Pemandangan danau", R.drawable.my_icon2),
         ArtPiece(6, "Danau", "Pemandangan danau", R.drawable.my_icon1),
-        ArtPiece(7, "Danau", "Pemandangan danau", R.drawable.my_icon1),
+        ArtPiece(7, "Danau", "Pemandangan danau", R.drawable.my_icon2),
         ArtPiece(8, "Danau", "Pemandangan danau", R.drawable.my_icon1),
-        ArtPiece(9, "Danau", "Pemandangan danau", R.drawable.my_icon1),
+        ArtPiece(9, "Danau", "Pemandangan danau", R.drawable.my_icon2),
         ArtPiece(10, "Danau", "Pemandangan danau", R.drawable.my_icon1),
-        ArtPiece(11, "Danau", "Pemandangan danau", R.drawable.my_icon1),
+        ArtPiece(11, "Danau", "Pemandangan danau", R.drawable.my_icon2),
         // Tambahkan art pieces lainnya di sini
     )
 }
-
-
-
-
-
-
 
