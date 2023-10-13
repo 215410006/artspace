@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+<<<<<<< HEAD
 import androidx.compose.foundation.clickable
+=======
+>>>>>>> origin/main
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -13,9 +16,15 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+<<<<<<< HEAD
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
+=======
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+>>>>>>> origin/main
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,6 +85,7 @@ fun ArtSpaceApp() {
 
         Spacer(modifier = Modifier.height(10.dp))
 
+<<<<<<< HEAD
         LazyColumn(
             modifier = Modifier.fillMaxSize()
         ) {
@@ -85,6 +95,9 @@ fun ArtSpaceApp() {
                 }
             }
         }
+=======
+        ArtPieceList(artPieces)
+>>>>>>> origin/main
     }
 }
 
@@ -126,6 +139,7 @@ fun ArtPieceWithButtonAndImage(artPiece: ArtPiece) {
 }
 
 @Composable
+<<<<<<< HEAD
 fun ArtPieceListItem(artPiece: ArtPiece, onItemClick: () -> Unit) {
     Row(
         modifier = Modifier
@@ -157,12 +171,43 @@ fun ArtPieceListItem(artPiece: ArtPiece, onItemClick: () -> Unit) {
 }
 
 
+=======
+fun ArtPieceList(artPieces: List<ArtPiece>) {
+    LazyColumn {
+        items(artPieces) { artPiece ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                // Tambahkan ikon di sini
+                Image(
+                    painter = painterResource(id = artPiece.imageResId),
+                    contentDescription = artPiece.name,
+                    modifier = Modifier.size(40.dp)
+                )
+
+                // Tambahkan teks nama art piece
+                Text(text = artPiece.name)
+
+                // Tambahkan teks deskripsi art piece
+                Text(text = artPiece.description)
+
+                // Tambahkan aksi ketika item diklik
+                // ...
+            }
+        }
+    }
+}
+
+>>>>>>> origin/main
 data class ArtPiece(val id: Int, val name: String, val description: String, val imageResId: Int)
 
 fun generateArtPieces(): List<ArtPiece> {
     return listOf(
         ArtPiece(1, "Danau", "Pemandangan danau", R.drawable.my_icon1),
         ArtPiece(2, "Gunung", "Pemandangan gunung", R.drawable.my_icon2),
+<<<<<<< HEAD
         ArtPiece(3, "Danau", "Pemandangan danau", R.drawable.my_icon1),
         ArtPiece(4, "Danau", "Pemandangan danau", R.drawable.my_icon1),
         ArtPiece(5, "Danau", "Pemandangan danau", R.drawable.my_icon1),
@@ -172,13 +217,18 @@ fun generateArtPieces(): List<ArtPiece> {
         ArtPiece(9, "Danau", "Pemandangan danau", R.drawable.my_icon1),
         ArtPiece(10, "Danau", "Pemandangan danau", R.drawable.my_icon1),
         ArtPiece(11, "Danau", "Pemandangan danau", R.drawable.my_icon1),
+=======
+>>>>>>> origin/main
         // Tambahkan art pieces lainnya di sini
     )
 }
 
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+>>>>>>> origin/main
