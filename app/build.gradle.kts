@@ -50,6 +50,9 @@ android {
 }
 
 dependencies {
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:x.y.z")
+    implementation ("androidx.activity:activity-compose:x.y.z")
+    implementation ("androidx.compose.ui:ui:x.y.z")
     implementation ("androidx.compose.ui:ui:1.0.0")
     implementation ("androidx.compose.material3:material3:1.0.0")
     implementation("androidx.core:core-ktx:1.9.0")
